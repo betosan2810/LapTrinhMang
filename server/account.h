@@ -151,3 +151,19 @@ node_a *updateNode(node_a *head,node_a *found){
 	strcpy(found->folder,folder);
 	return head;
 }
+
+// Hàm validate_user: Kiểm tra tài khoản và mật khẩu
+node_a* validate_user(node_a *head, const char *username, const char *password) {
+    node_a *current = head;
+
+    // Duyệt qua danh sách các tài khoản
+    while (current != NULL) {
+        // So sánh tên người dùng và mật khẩu
+        if (strcmp(current->username, username) == 0 && strcmp(current->pass, password) == 0) {
+            return current; // Trả về con trỏ đến node chứa tài khoản hợp lệ
+        }
+        current = current->next;
+    }
+
+    return NULL; // Nếu không tìm thấy tài khoản hợp lệ, trả về NULL
+}
