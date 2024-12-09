@@ -82,9 +82,6 @@ int main(int argc, char *argv[]) {
     send_command(sockfd, buffer);
     receive_response(sockfd);
 
-    // Kiểm tra xem xác thực thành công không
-    printf("Login successful.\n");
-
     // Menu và xử lý lệnh từ client
     while (1) {
         menu();
